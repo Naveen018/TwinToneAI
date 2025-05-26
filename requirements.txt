@@ -10,3 +10,11 @@ streamlit
 requests
 python-dotenv
 pytest
+pytest-asyncio
+httpx
+pytest-mock
+pytest-cov
+faker
+factory-boy
+testcontainers
+sqlalchemy-utils
