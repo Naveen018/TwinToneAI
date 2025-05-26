@@ -9,12 +9,14 @@ TwinToneAI is a FastAPI-based application that generates both casual and formal 
 - Modern Streamlit-based user interface
 - RESTful API endpoints
 - PostgreSQL database integration
+- Docker support for easy deployment
 
 ## Prerequisites
 
 - Python 3.8+
 - PostgreSQL
 - OpenAI API key (for response generation)
+- Docker and Docker Compose (for containerized deployment)
 
 ## Project Structure
 
@@ -26,10 +28,14 @@ TwinToneAI/
 │   ├── core/           # Core business logic
 │   └── db/             # Database models and connection
 ├── .env.example        # Environment variables template
+├── docker-compose.yml  # Docker compose configuration
+├── Dockerfile         # Docker configuration
 └── requirements.txt    # Python dependencies
 ```
 
 ## Setup Instructions
+
+### Option 1: Local Setup
 
 1. **Clone the repository**
    ```bash
@@ -62,7 +68,28 @@ TwinToneAI/
    - Ensure PostgreSQL is running
    - Update database credentials in `.env` if different from defaults
 
+### Option 2: Docker Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd TwinToneAI
+   ```
+
+2. **Set up environment variables**
+   ```bash
+   cp .env.example .env
+   ```
+   Edit `.env` and fill in your configuration values
+
+3. **Build and start the containers**
+   ```bash
+   docker-compose up --build
+   ```
+
 ## Running the Application
+
+### Option 1: Local Run
 
 1. **Start the FastAPI backend**
    ```bash
@@ -74,7 +101,33 @@ TwinToneAI/
    ```bash
    streamlit run app/frontend/streamlit.py
    ```
-   The frontend will be available at `http://localhost:8501`
+   The frontend will be available at `http://localhost:8001`
+
+### Option 2: Docker Run
+
+1. **Start all services**
+   ```bash
+   docker-compose up
+   ```
+   This will start:
+   - FastAPI backend at `http://localhost:8000`
+   - Streamlit frontend at `http://localhost:8001`
+   - PostgreSQL database
+
+2. **Run in detached mode**
+   ```bash
+   docker-compose up -d
+   ```
+
+3. **Stop the services**
+   ```bash
+   docker-compose down
+   ```
+
+4. **View logs**
+   ```bash
+   docker-compose logs -f
+   ```
 
 ## API Endpoints
 
