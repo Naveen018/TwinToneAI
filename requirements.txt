@@ -1,0 +1,12 @@
+langchain
+langchain_openai
+langchain_community
+openai
+pydantic
+fastapi
+uvicorn
+psycopg2-binary
+streamlit
+requests
+python-dotenv
+pytest
