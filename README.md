@@ -117,7 +117,7 @@ OPENAI_API_KEY=your_openai_api_key
 
 ## Contact
 
-For any questions or support, please reach out to [Naveen V](naveenv3112000@gmail.com)
+For any questions or support, please reach out to [naveenv3112000@gmail.com](naveenv3112000@gmail.com)
 
 ## License
 
